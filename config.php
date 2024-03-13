@@ -202,3 +202,14 @@ $wgParsoidSettings = [
 
 $wgDefaultUserOptions['usebetatoolbar'] = 1;
 $wgDefaultUserOptions['usecodemirror'] = true;
+
+wfLoadExtension('AWS');
+
+$wgAWSCredentials = [
+  'key' => getenv('AWS_S3_ACCESS_KEY_ID'),
+  'secret' => getenv('AWS_S3_SECRET_ACCESS_KEY'),
+  'token' => false
+];
+
+$wgAWSRegion = 'ap-northeast-2';
+$wgAWSBucketName = 'gsainfoteam-wiki-images';
