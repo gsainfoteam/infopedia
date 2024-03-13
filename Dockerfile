@@ -8,5 +8,8 @@ RUN git clone https://github.com/wikimedia/mediawiki-extensions-CSS.git extensio
 ADD composer.local.json .
 ADD config.php LocalSettings.php
 
-RUN curl -L https://getcomposer.org/composer-2.phar --output composer.phar && \
-  php composer.phar install --no-dev
+RUN apt update && \
+  apt install zip unzip php-zip && \
+  curl -L https://getcomposer.org/composer-2.phar --output composer.phar && \
+  php composer.phar install --no-dev && \
+  php composer.phar update
