@@ -224,7 +224,7 @@ $wgOAuth2Client['client']['secret'] = getenv('OAUTH_GITHUB_SECRET'); // The clie
 $wgOAuth2Client['configuration']['authorize_endpoint']     = 'https://github.com/login/oauth/authorize'; // Authorization URL
 $wgOAuth2Client['configuration']['access_token_endpoint']  = 'https://github.com/login/oauth/access_token'; // Token URL
 $wgOAuth2Client['configuration']['api_endpoint']           = 'https://api.github.com/user'; // URL to fetch user JSON
-$wgOAuth2Client['configuration']['redirect_uri']           = 'https://infoteam.wiki.gistory.me/Special:OAuth2Client/callback'; // URL for OAuth2 server to redirect to
+$wgOAuth2Client['configuration']['redirect_uri']           = 'https://infoteam.wiki.gistory.me/index.php/특수:OAuth2Client/callback'; // URL for OAuth2 server to redirect to
 
 $wgOAuth2Client['configuration']['username'] = 'login'; // JSON path to username
 $wgOAuth2Client['configuration']['email'] = 'email'; // JSON path to email
