@@ -6,7 +6,7 @@ RUN git clone https://github.com/wikimedia/mediawiki-extensions-CSS.git extensio
   git clone --depth 1 https://github.com/edwardspec/mediawiki-aws-s3.git extensions/AWS
 
 ADD composer.local.json .
-ADD composer-aws.local.json extensions/AWS
+ADD composer-aws.local.json extensions/AWS/composer.local.json
 ADD config.php LocalSettings.php
 
 RUN apt update && \
