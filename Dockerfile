@@ -18,7 +18,7 @@ RUN apt update && \
   COMPOSER=composer.local.json composer install && \
   cd ../../ && \
   cd extensions/MW-OAuth2Client && \
-  git submodule upate --init && \
+  git submodule update --init && \
   cd endors/oauth2-client && \
   composer install && \
   cd ../../ && \
