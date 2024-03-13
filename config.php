@@ -136,8 +136,8 @@ $wgWhitelistRead = [
   '특수:환경설정',
   '특수:이메일확인',
   # '특수:이메일바꾸기',
-  'Special:OAuth2Client',
-  'Special:OAuth2Client/redirect',
+  '특수:OAuth2Client',
+  '특수:OAuth2Client/redirect',
 ];
 
 $wgHooks["isValidEmailAddr"][] = function ($email, &$result) {
