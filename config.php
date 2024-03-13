@@ -136,6 +136,8 @@ $wgWhitelistRead = [
   '특수:환경설정',
   '특수:이메일확인',
   # '특수:이메일바꾸기',
+  'Special:OAuth2Client',
+  'Special:OAuth2Client/redirect',
 ];
 
 $wgHooks["isValidEmailAddr"][] = function ($email, &$result) {
@@ -213,3 +215,17 @@ $wgAWSCredentials = [
 
 $wgAWSRegion = 'ap-northeast-2';
 $wgAWSBucketName = 'gsainfoteam-wiki-images';
+
+wfLoadExtension('MW-OAuth2Client');
+$wgOAuth2Client['client']['id']     = getenv('CLIENT_ID_GITHUB_LOGIN'); // The client ID assigned to you by the provider
+$wgOAuth2Client['client']['secret'] = getenv('CLIENT_SECRET_GITHUB_LOGIN'); // The client secret assigned to you by the provider
+
+$wgOAuth2Client['configuration']['authorize_endpoint']     = 'https://github.com/login/oauth/authorize'; // Authorization URL
+$wgOAuth2Client['configuration']['access_token_endpoint']  = 'https://github.com/login/oauth/access_token'; // Token URL
+$wgOAuth2Client['configuration']['api_endpoint']           = 'https://api.github.com/user'; // URL to fetch user JSON
+$wgOAuth2Client['configuration']['redirect_uri']           = 'https://infoteam.wiki.gistory.me/Special:OAuth2Client/callback'; // URL for OAuth2 server to redirect to
+
+$wgOAuth2Client['configuration']['username'] = 'login'; // JSON path to username
+$wgOAuth2Client['configuration']['email'] = 'email'; // JSON path to email
+
+$wgOAuth2Client['configuration']['scopes'] = 'user:email'; //Permissions
