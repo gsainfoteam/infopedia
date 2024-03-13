@@ -230,3 +230,14 @@ $wgOAuth2Client['configuration']['username'] = 'login'; // JSON path to username
 $wgOAuth2Client['configuration']['email'] = 'email'; // JSON path to email
 
 $wgOAuth2Client['configuration']['scopes'] = 'user:email read:org'; //Permissions
+
+$wgOAuth2Client['configuration']['authz_callback'] = function ($response) {
+  $allowedUsers = explode("\n", getenv('ALLOWED_GITHUB_USERS'));
+  foreach ($allowedUsers as $user) {
+    if (strcmp($user, $response['login']) === 0) {
+      return true;
+    }
+  }
+  return false;
+};
+$wgOAuth2Client['configuration']['authz_failure_message'] = '올바르지 않은 사용자';
