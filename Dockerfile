@@ -10,6 +10,7 @@ ADD config.php LocalSettings.php
 
 RUN apt update && \
   apt install zip unzip php-zip && \
-  curl -L https://getcomposer.org/composer-2.phar --output composer.phar && \
-  php composer.phar install --no-dev && \
-  php composer.phar update
+  curl -sS https://getcomposer.org/installer -o composer-setup.php && \
+  php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
+  composer install && \
+  composer update
