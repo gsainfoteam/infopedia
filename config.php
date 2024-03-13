@@ -128,6 +128,9 @@ $wgGroupPermissions['user']['upload'] = false;
 $wgGroupPermissions['emailconfirmed']['read'] = true;
 $wgGroupPermissions['emailconfirmed']['upload'] = true;
 $wgGroupPermissions['emailconfirmed']['writeapi'] = true;
+$wgGroupPermissions['confirmed']['read'] = true;
+$wgGroupPermissions['confirmed']['upload'] = true;
+$wgGroupPermissions['confirmed']['writeapi'] = true;
 $wgWhitelistRead = [
   'Main Page',
   'MediaWiki:Common.css',
