@@ -7,17 +7,14 @@ RUN git clone https://github.com/wikimedia/mediawiki-extensions-CSS.git extensio
   git clone https://github.com/United-Earth-Team/MW-OAuth2Client.git extensions/MW-OAuth2Client
 
 ADD composer.local.json .
-ADD composer-aws.local.json extensions/AWS/composer.local.json
 ADD config.php LocalSettings.php
 
 RUN apt update && \
   apt install zip unzip && \
   curl -sS https://getcomposer.org/installer -o composer-setup.php && \
   php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
-  cd extensions/AWS && \
-  composer install && \
-  COMPOSER=composer.local.json composer install && \
-  cd ../../ && \
+  composer update && \
+  \
   cd extensions/MW-OAuth2Client && \
   git submodule update --init && \
   cd vendors/oauth2-client && \
