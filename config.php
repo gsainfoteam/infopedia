@@ -202,3 +202,5 @@ $wgParsoidSettings = [
 
 $wgDefaultUserOptions['usebetatoolbar'] = 1;
 $wgDefaultUserOptions['usecodemirror'] = true;
+
+$wgReadOnly = "서버가 좀 아픈 것 같아요..";
