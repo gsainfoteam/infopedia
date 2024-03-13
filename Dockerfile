@@ -19,7 +19,7 @@ RUN apt update && \
   cd ../../ && \
   cd extensions/MW-OAuth2Client && \
   git submodule update --init && \
-  cd endors/oauth2-client && \
+  cd vendors/oauth2-client && \
   composer install && \
   cd ../../ && \
   cd ../../
