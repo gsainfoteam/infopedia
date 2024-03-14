@@ -12,13 +12,13 @@ ADD config.php LocalSettings.php
 RUN apt update && \
   apt install zip unzip && \
   curl -sS https://getcomposer.org/installer -o composer-setup.php && \
-  php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
-  \
-  cd extensions/MW-OAuth2Client && \
+  php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
+RUN cd extensions/MW-OAuth2Client && \
   git submodule update --init && \
   cd vendors/oauth2-client && \
   composer install && \
   cd ../../ && \
-  cd ../../ && \
-  composer install && \
+  cd ../../
+RUN composer install && \
   composer update
