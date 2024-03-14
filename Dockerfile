@@ -13,7 +13,6 @@ RUN apt update && \
   apt install zip unzip && \
   curl -sS https://getcomposer.org/installer -o composer-setup.php && \
   php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
-  composer update && \
   \
   cd extensions/MW-OAuth2Client && \
   git submodule update --init && \
@@ -21,4 +20,5 @@ RUN apt update && \
   composer install && \
   cd ../../ && \
   cd ../../ && \
+  composer install && \
   composer update
