@@ -1,7 +1,6 @@
 {
   "require": {
-    "psr/http-message": "~1",
-    "aws/aws-sdk-php": "^3.67"
+    "psr/http-message": "~1"
   },
   "extra": {
     "merge-plugin": {
