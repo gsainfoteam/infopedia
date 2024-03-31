@@ -232,7 +232,7 @@ $wgOAuth2Client['configuration']['redirect_uri']           = 'https://infoteam.w
 $wgOAuth2Client['configuration']['username'] = 'login'; // JSON path to username
 $wgOAuth2Client['configuration']['email'] = 'email'; // JSON path to email
 
-$wgOAuth2Client['configuration']['scopes'] = 'user:email read:org'; //Permissions
+$wgOAuth2Client['configuration']['scopes'] = 'read:user user:email read:org'; //Permissions
 
 $wgOAuth2Client['configuration']['authz_callback'] = function ($response) {
   $allowedUsers = explode("\n", getenv('ALLOWED_GITHUB_USERS'));
