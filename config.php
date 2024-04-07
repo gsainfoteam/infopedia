@@ -132,7 +132,7 @@ $wgGroupPermissions['confirmed']['read'] = true;
 $wgGroupPermissions['confirmed']['upload'] = true;
 $wgGroupPermissions['confirmed']['writeapi'] = true;
 $wgWhitelistRead = [
-  'Main Page',
+  '대문',
   'MediaWiki:Common.css',
   'MediaWiki:Common.js',
   '특수:계정만들기',
