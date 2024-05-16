@@ -16,10 +16,4 @@ RUN apt update && \
   php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
 ENV COMPOSER_ALLOW_SUPERUSER=1
-RUN cd extensions/MW-OAuth2Client && \
-  git submodule update --init && \
-  cd vendors/oauth2-client && \
-  composer install && \
-  cd ../../ && \
-  cd ../../
 RUN composer update
