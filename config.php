@@ -221,26 +221,17 @@ $wgAWSRegion = 'ap-northeast-2';
 $wgAWSBucketName = 'gsainfoteam-wiki-images';
 
 wfLoadExtension('MW-OAuth2Client');
-$wgOAuth2Client['client']['id']     = getenv('OAUTH_GITHUB_ID'); // The client ID assigned to you by the provider
-$wgOAuth2Client['client']['secret'] = getenv('OAUTH_GITHUB_SECRET'); // The client secret assigned to you by the provider
+$wgOAuth2Client['client']['id']     = getenv('OAUTH_GOOGLE_ID'); // The client ID assigned to you by the provider
+$wgOAuth2Client['client']['secret'] = getenv('OAUTH_GOOGLE_SECRET'); // The client secret assigned to you by the provider
 
-$wgOAuth2Client['configuration']['authorize_endpoint']     = 'https://github.com/login/oauth/authorize'; // Authorization URL
-$wgOAuth2Client['configuration']['access_token_endpoint']  = 'https://github.com/login/oauth/access_token'; // Token URL
-$wgOAuth2Client['configuration']['api_endpoint']           = 'https://api.github.com/user'; // URL to fetch user JSON
+$wgOAuth2Client['configuration']['authorize_endpoint']     = 'https://accounts.google.com/o/oauth2/v2/auth'; // Authorization URL
+$wgOAuth2Client['configuration']['access_token_endpoint']  = 'https://oauth2.googleapis.com/token'; // Token URL
+$wgOAuth2Client['configuration']['api_endpoint']           = 'https://www.googleapis.com/oauth2/v3/userinfo'; // URL to fetch user JSON
 $wgOAuth2Client['configuration']['redirect_uri']           = 'https://infoteam.wiki.gistory.me/index.php/Special:OAuth2Client/callback'; // URL for OAuth2 server to redirect to
 
-$wgOAuth2Client['configuration']['username'] = 'login'; // JSON path to username
+$wgOAuth2Client['configuration']['username'] = 'name'; // JSON path to username
 $wgOAuth2Client['configuration']['email'] = 'email'; // JSON path to email
 
-$wgOAuth2Client['configuration']['scopes'] = 'read:user user:email read:org'; //Permissions
+$wgOAuth2Client['configuration']['scopes'] = 'https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile'; //Permissions
 
-$wgOAuth2Client['configuration']['authz_callback'] = function ($response) {
-  $allowedUsers = explode("\n", getenv('ALLOWED_GITHUB_USERS'));
-  foreach ($allowedUsers as $user) {
-    if (strcmp($user, $response['login']) === 0) {
-      return true;
-    }
-  }
-  return false;
-};
 $wgOAuth2Client['configuration']['authz_failure_message'] = '올바르지 않은 사용자';
