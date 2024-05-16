@@ -4,7 +4,8 @@ RUN git clone https://github.com/wikimedia/mediawiki-extensions-CSS.git extensio
   git clone -b REL1_41 https://github.com/wikimedia/mediawiki-extensions-CodeMirror.git extensions/CodeMirror && \
   git clone -b REL1_41 https://github.com/wikimedia/mediawiki-extensions-MobileFrontend.git extensions/MobileFrontend && \
   git clone --depth 1 https://github.com/edwardspec/mediawiki-aws-s3.git extensions/AWS && \
-  git clone https://github.com/United-Earth-Team/MW-OAuth2Client.git extensions/MW-OAuth2Client
+  git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/PluggableAuth extensions/PluggableAuth && \
+  git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/OpenIDConnect extensions/OpenIDConnect
 
 ADD composer.local.json .
 ADD config.php LocalSettings.php
