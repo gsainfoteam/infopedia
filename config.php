@@ -222,6 +222,7 @@ $wgAWSRegion = 'ap-northeast-2';
 $wgAWSBucketName = 'gsainfoteam-wiki-images';
 
 wfLoadExtension('PluggableAuth');
+wfLoadExtension('OpenIDConnect');
 
 $wgPluggableAuth_Config[] = [
   'plugin' => 'OpenIDConnect',
