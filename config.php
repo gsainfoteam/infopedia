@@ -124,6 +124,7 @@ $wgGroupPermissions['*']['createaccount'] = false;
 $wgGroupPermissions['*']['createpage'] = false;
 $wgGroupPermissions['*']['edit'] = false;
 $wgGroupPermissions['*']['read'] = false;
+$wgGroupPermissions['*']['autocreateaccount'] = true;
 $wgGroupPermissions['user']['read'] = false;
 $wgGroupPermissions['user']['upload'] = false;
 $wgGroupPermissions['emailconfirmed']['read'] = true;
