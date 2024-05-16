@@ -230,6 +230,10 @@ $wgPluggableAuth_Config[] = [
   'data' => [
     'providerURL' => 'https://accounts.google.com',
     'clientID' => getenv('OAUTH_GOOGLE_ID'),
-    'clientsecret' => getenv('OAUTH_GOOGLE_SECRET')
+    'clientsecret' => getenv('OAUTH_GOOGLE_SECRET'),
+    'scope' => ['openid', 'https://www.googleapis.com/auth/userinfo.email', 'https://www.googleapis.com/auth/userinfo.profile'],
+    'preferredUsernameProcessor' => static function ($name, $fields) {
+      return str_replace('@gistory.me', '', $fields['email']);
+    }
   ]
 ];
