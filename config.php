@@ -237,3 +237,5 @@ $wgPluggableAuth_Config[] = [
     }
   ]
 ];
+
+$wgOpenIDConnect_ForceReauth = true;
