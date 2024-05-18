@@ -239,3 +239,6 @@ $wgPluggableAuth_Config[] = [
 ];
 
 $wgOpenIDConnect_ForceReauth = true;
+
+wfLoadExtension('UserMerge');
+$wgGroupPermissions['sysop']['usermerge'] = true;
