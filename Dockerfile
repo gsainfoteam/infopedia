@@ -1,4 +1,4 @@
-FROM mediawiki:1.41
+FROM mediawiki:1.41-fpm-alpine
 
 RUN git clone https://github.com/wikimedia/mediawiki-extensions-CSS.git extensions/CSS && \
   git clone -b REL1_41 https://github.com/wikimedia/mediawiki-extensions-CodeMirror.git extensions/CodeMirror && \
