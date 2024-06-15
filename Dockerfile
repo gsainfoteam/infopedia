@@ -11,8 +11,7 @@ RUN git clone https://github.com/wikimedia/mediawiki-extensions-CSS.git extensio
 ADD composer.local.json .
 ADD config.php LocalSettings.php
 
-RUN apt update && \
-  apt install zip unzip && \
+RUN apk add zip unzip && \
   curl -sS https://getcomposer.org/installer -o composer-setup.php && \
   php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
