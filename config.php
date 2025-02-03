@@ -220,7 +220,7 @@ $wgAWSCredentials = [
 ];
 
 $wgAWSRegion = 'ap-northeast-2';
-$wgAWSBucketName = 'gsainfoteam-wiki-images';
+$wgAWSBucketName = 'gsainfoteam-icarus-wiki-images';
 
 wfLoadExtension('PluggableAuth');
 wfLoadExtension('OpenIDConnect');
