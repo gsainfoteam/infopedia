@@ -234,7 +234,10 @@ $wgPluggableAuth_Config[] = [
     'scope' => ['openid', 'https://www.googleapis.com/auth/userinfo.email', 'https://www.googleapis.com/auth/userinfo.profile'],
     'preferredUsernameProcessor' => static function ($name, $fields) {
       return str_replace('@gistory.me', '', $fields['email']);
-    }
+    },
+    'authparam' => [
+      'hd' => 'gistory.me',
+    ]
   ]
 ];
 
