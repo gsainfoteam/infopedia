@@ -244,3 +244,4 @@ $wgPluggableAuth_Config[] = [
 
 wfLoadExtension('UserMerge');
 $wgGroupPermissions['sysop']['usermerge'] = true;
+$wgRememberMe = 'always';
