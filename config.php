@@ -237,13 +237,10 @@ $wgPluggableAuth_Config[] = [
     },
     'authparam' => [
       'hd' => 'gistory.me',
-      'access_type' => 'offline',
       'prompt' => 'consent',
     ]
   ]
 ];
-
-$wgOpenIDConnect_ForceReauth = true;
 
 wfLoadExtension('UserMerge');
 $wgGroupPermissions['sysop']['usermerge'] = true;
