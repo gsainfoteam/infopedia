@@ -247,6 +247,6 @@ $wgGroupPermissions['sysop']['usermerge'] = true;
 $wgRememberMe = 'always';
 
 $wgHooks['AuthChangeFormFields'][] = function ($requests, $fieldInfo, &$formDescriptor, $action) {
-  $formDescriptor['rememberMe'] = ['type' => 'check', 'default' => true];
+  $fieldDefinitions['rememberMe'] = ['type' => 'check', 'default' => true];
   return true;
 };
