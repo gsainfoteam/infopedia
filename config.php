@@ -249,3 +249,4 @@ $wgRememberMe = 'always';
 $wgExtendedLoginCookieExpiration = 180 * 24 * 60 * 60; // 180 days
 $wgCookieExpiration = 30 * 24 * 60 * 60; // 30 days
 $wgUsePrivateIPs = true;
+$wgPasswordAttemptThrottle = [];
