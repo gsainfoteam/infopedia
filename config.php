@@ -29,7 +29,7 @@ $wgSitename = "인포피디아";
 $wgScriptPath = "";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "https://infoteam.wiki.gistory.me";
+$wgServer = "https://wiki.gistory.me";
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
