@@ -247,6 +247,9 @@ $wgGroupPermissions['sysop']['usermerge'] = true;
 $wgRememberMe = 'always';
 
 $wgHooks['AuthChangeFormFields'][] = function ($requests, $fieldInfo, &$formDescriptor, $action) {
-  $fieldDefinitions['rememberMe'] = ['type' => 'check', 'default' => true];
+  $formDescriptor['rememberMe'] = ['type' => 'check', 'default' => true];
   return true;
 };
+
+$wgExtendedLoginCookieExpiration = 180 * 24 * 60 * 60; // 180 days
+$wgCookieExpiration = 30 * 24 * 60 * 60; // 30 days
