@@ -237,7 +237,6 @@ $wgPluggableAuth_Config[] = [
     },
     'authparam' => [
       'hd' => 'gistory.me',
-      'prompt' => 'none',
     ]
   ]
 ];
