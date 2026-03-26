@@ -13,7 +13,7 @@ ADD composer.local.json .
 ADD config.php LocalSettings.php
 
 RUN apt update && \
-  apt install zip unzip libpq-dev -y && \
+  apt install zip unzip libpq-dev php-apcu php-igbinary -y && \
   docker-php-ext-install pgsql && \
   curl -sS https://getcomposer.org/installer -o composer-setup.php && \
   php composer-setup.php --install-dir=/usr/local/bin --filename=composer
