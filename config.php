@@ -97,7 +97,7 @@ $wgLocaltimezone = "Asia/Seoul";
 ## Set $wgCacheDirectory to a writable directory on the web server
 ## to make your wiki go slightly faster. The directory should not
 ## be publicly accessible from the web.
-#$wgCacheDirectory = "$IP/cache";
+$wgCacheDirectory = "$IP/cache";
 
 $wgSecretKey = getenv("WG_SECRET_KEY");
 
